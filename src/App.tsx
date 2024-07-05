@@ -28,7 +28,7 @@ function App() {
       <Authenticator>
           {({ signOut, user }) => (
               <main>
-                  <h1>{user?.signInDetails?.loginId}'s</h1>
+                  <h1>{user?.signInDetails?.loginId}'s Todo list for the day</h1>
                   <h1>My todos</h1>
                   <button onClick={createTodo}>+ new</button>
                   <ul>
