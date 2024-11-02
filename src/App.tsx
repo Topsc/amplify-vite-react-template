@@ -20,37 +20,37 @@ function App() {
   }
 
   function deleteTodo(id: string) {
-        client.models.Todo.delete({ id })
-    }
+    client.models.Todo.delete({ id })
+  }
 
   return (
 
-      <Authenticator>
-          {({ signOut, user }) => (
-              <main>
-                  <h1>{user?.signInDetails?.loginId}'s Todo List</h1>
-                  <h1>My todos</h1>
-                  <button onClick={createTodo}>+ new</button>
-                  <ul>
-                      {todos.map((todo) => (
-                          <li
-                              onClick={() => deleteTodo(todo.id)}
-                              key={todo.id}>{todo.content}</li>
-                      ))}
-                  </ul>
-                  <div>
-                      🥳 App successfully hosted. Try creating a new todo.
-                      <br/>
-                      <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
-                          Review next step of this tutorial.
-                      </a>
-                  </div>
-                  <button onClick={signOut}>Sign out</button>
-              </main>
+    <Authenticator>
+      {({ signOut, user }) => (
+        <main>
+          <h1>{user?.signInDetails?.loginId}'s Todo Lists</h1>
+          <h1>My todos</h1>
+          <button onClick={createTodo}>+ new</button>
+          <ul>
+            {todos.map((todo) => (
+              <li
+                onClick={() => deleteTodo(todo.id)}
+                key={todo.id}>{todo.content}</li>
+            ))}
+          </ul>
+          <div>
+            🥳 App successfully hosted. Try creating a new todo.
+            <br />
+            <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
+              Review next step of this tutorial.
+            </a>
+          </div>
+          <button onClick={signOut}>Sign out</button>
+        </main>
 
-          )}
-      </Authenticator>
+      )}
+    </Authenticator>
   );
 }
 
-          export default App;
+export default App;
